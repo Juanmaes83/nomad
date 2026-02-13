@@ -1,0 +1,59 @@
+/* Estilos específicos de la aplicación */
+
+/* Mejoras de accesibilidad para focus */
+*:focus-visible {
+  outline: 2px solid #1E3D5B;
+  outline-offset: 2px;
+}
+
+/* Estilos para el acordeón nativo */
+details > summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+details[open] summary ~ * {
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estilos para la barra de desplazamiento */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FFF9F0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E5D3B0;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1E3D5B;
+}
+
+/* Utilidades adicionales */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
